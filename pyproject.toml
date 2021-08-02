@@ -3,7 +3,7 @@ name = "unixpath"
 version = "0.1.0"
 readme = "README.md"
 homepage = "https://github.com/shawwn/unixpath"
-description = "Cross-platform os.path functions that always behave as if the paths are for unix systems"
+description = "unix-style path processing functions"
 authors = ["Shawn Presser"]
 license = "MIT"
 

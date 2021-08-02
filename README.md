@@ -1,6 +1,6 @@
 # unixpath
 
-> Cross-platform os.path functions that always behave as if the paths are for unix systems
+> unix-style path processing functions
 
 WARNING: This repo is in development. It was automatically generated with [mkpylib](https://github.com/shawwn/scrap/blob/master/mkpylib). If you're reading this message, it means that I use this repo for my own purposes right now. It might not do anything at all; the default functionality is `print('TODO')`.
 
