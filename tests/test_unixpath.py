@@ -1,5 +1,23 @@
-from unixpath import __version__
+import unixpath
+import os.path
 
+def check(fn, *args, **kws):
+    assert getattr(os.path, fn)(*args, **kws) == getattr(unixpath, fn)(*args, **kws)
 
-def test_version():
-    assert __version__ == '0.1.0'
+def test_path():
+    check('join', '.', '/foo')
+    for fn in ['isabs', 'split', 'dirname', 'basename', 'normpath']:
+        check(fn, '/')
+        check(fn, '//')
+        check(fn, '///')
+        check(fn, '////')
+        check(fn, './')
+        check(fn, '/abc')
+        check(fn, '/abc/')
+        check(fn, '/abc//')
+    assert '/' == unixpath.dirname('/')
+    assert '//' == unixpath.dirname('//')
+    assert '/' == unixpath.normpath('///')
+    assert '/' == unixpath.normpath('////')
+    assert '///' == unixpath.dirname('///')
+    assert '////' == unixpath.dirname('////')
